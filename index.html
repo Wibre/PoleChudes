@@ -1,0 +1,718 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Поле Чудес</title>
+  </head>
+  <body>
+
+
+    <header class="p-1 bg-info mb-3 score_ text-white text-center" style="display: none"><h1>ОЧКИ: <span class="score text-warning">0</span></h1></header>
+
+    <div class="container" style="display: none;">
+        <button class="btn1 btn btn-info">Следующий вопрос></button>
+      <div class="vopr p-4 bg-danger mt-2 mb-2">
+        <h2>В древнем Китае размоченную кору тутового дерева расщепляли на тонкие листы и варили в растворе извести 2 часа. Затем полученную массу разбивали молотками, добавляли в неё клей, заливали водой и пропускали сквозь сито. Массу, осевшую в сите, опрокидывали на доску, прессовали и просушивали. Так в древнем Китае получали то, чем мы пользуемся сейчас каждый день.</h2>
+      </div>
+
+      <div class="slovo d-flex">
+        <div class="col-2 bbl border pr1 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr2 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr3 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr4 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr5 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr6 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+      </div>
+
+      <div class="bukvi text-center mt-3">
+          <span class="font-weight-bold buk1" style="font-size: 34px">А</span>
+                <span class="font-weight-bold buk2" style="font-size: 34px">Б</span>
+                <span class="font-weight-bold buk3" style="font-size: 34px">В</span>
+                <span class="font-weight-bold buk4" style="font-size: 34px">Г</span>
+                <span class="font-weight-bold buk5" style="font-size: 34px">Д</span>
+                <span class="font-weight-bold buk6" style="font-size: 34px">Е</span>
+                <span class="font-weight-bold buk7" style="font-size: 34px">Ё</span>
+                <span class="font-weight-bold buk8" style="font-size: 34px">Ж</span>
+                <span class="font-weight-bold buk9" style="font-size: 34px">З</span>
+                <span class="font-weight-bold buk10" style="font-size: 34px">И</span>
+                <span class="font-weight-bold buk11" style="font-size: 34px">Й</span>
+                <span class="font-weight-bold buk12" style="font-size: 34px">К</span>
+                <span class="font-weight-bold buk13" style="font-size: 34px">Л</span>
+                <span class="font-weight-bold buk14" style="font-size: 34px">М</span>
+                <span class="font-weight-bold buk15" style="font-size: 34px">Н</span>
+                <span class="font-weight-bold buk16" style="font-size: 34px">О</span>
+                <span class="font-weight-bold buk17" style="font-size: 34px">П</span>
+                <span class="font-weight-bold buk18" style="font-size: 34px">Р</span>
+                <span class="font-weight-bold buk19" style="font-size: 34px">С</span>
+                <span class="font-weight-bold buk20" style="font-size: 34px">Т</span>
+                <span class="font-weight-bold buk21" style="font-size: 34px">У</span>
+                <span class="font-weight-bold buk22" style="font-size: 34px">Ф</span>
+                <span class="font-weight-bold buk23" style="font-size: 34px">Х</span>
+                <span class="font-weight-bold buk24" style="font-size: 34px">Ц</span>
+                <span class="font-weight-bold buk25" style="font-size: 34px">Ч</span>
+                <span class="font-weight-bold buk26" style="font-size: 34px">Ш</span>
+                <span class="font-weight-bold buk27" style="font-size: 34px">Щ</span>
+                <span class="font-weight-bold buk28" style="font-size: 34px">Ъ</span>
+                <span class="font-weight-bold buk29" style="font-size: 34px">Ы</span>
+                <span class="font-weight-bold buk30" style="font-size: 34px">Ь</span>
+                <span class="font-weight-bold buk31" style="font-size: 34px">Э</span>
+                <span class="font-weight-bold buk32" style="font-size: 34px">Ю</span>
+                <span class="font-weight-bold buk33" style="font-size: 34px">Я</span>
+      </div>
+
+      <div class="yakStart mt-5 col-2">
+          <img src="start.png" class="w-100" style="position: absolute; left: -200px; width: 300px; bottom: -60px">
+          <q class="border p-2" style="left: -90px; position: absolute; bottom: -10px;">В эфире капитал шоу поле чудес! Вам нужно угадать слово</q>
+      </div>
+    </div>
+
+    <div class="yak col-2" style="display: none">
+        <h1 style="margin-left: 650px; position: absolute; top: -200px; z-index: 1;" class="text-danger">Молодец!</h1>
+        <img src="yakubovich.png" class="w-100" style="position: absolute; top: -300px; margin-left: 600px;">
+    </div>
+
+    <div class="pole text-center mt-5 pt-5">
+        <img src="pole.png">
+    </div>
+
+
+
+                            <!-- 2 вопрос -->
+
+<div class="container_2 container" style="display: none;">
+      <div class="vopr2 p-4 bg-danger mt-2 mb-2">
+        <h2>На Руси этот продукт пряный, необычного вкуса, занимал почётное место и в свадебном угощении и поминальном обряде. Он был очень сладок и дорог. О каком продукте идёт речь?</h2>
+      </div>
+
+      <div class="slovo d-flex">
+        <div class="col-2 bbl border pr1_2 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr2_2 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr3_2 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr4_2 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr5_2 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+        <div class="col-2 bbl border pr6_2 text-center" style="background-color: black; height: 150px; font-size: 100px"></div>
+      </div>
+
+      <div class="bukvi text-center mt-3">
+
+                    <!-- пряник -->
+          <span class="font-weight-bold buk1_2" style="font-size: 34px">А</span>
+                <span class="font-weight-bold buk2_2" style="font-size: 34px">Б</span>
+                <span class="font-weight-bold buk3_2" style="font-size: 34px">В</span>
+                <span class="font-weight-bold buk4_2" style="font-size: 34px">Г</span>
+                <span class="font-weight-bold buk5_2" style="font-size: 34px">Д</span>
+                <span class="font-weight-bold buk6_2" style="font-size: 34px">Е</span>
+                <span class="font-weight-bold buk7_2" style="font-size: 34px">Ё</span>
+                <span class="font-weight-bold buk8_2" style="font-size: 34px">Ж</span>
+                <span class="font-weight-bold buk9_2" style="font-size: 34px">З</span>
+                <span class="font-weight-bold buk10_2" style="font-size: 34px">И</span>
+                <span class="font-weight-bold buk11_2" style="font-size: 34px">Й</span>
+                <span class="font-weight-bold buk12_2" style="font-size: 34px">К</span>
+                <span class="font-weight-bold buk13_2" style="font-size: 34px">Л</span>
+                <span class="font-weight-bold buk14_2" style="font-size: 34px">М</span>
+                <span class="font-weight-bold buk15_2" style="font-size: 34px">Н</span>
+                <span class="font-weight-bold buk16_2" style="font-size: 34px">О</span>
+                <span class="font-weight-bold buk17_2" style="font-size: 34px">П</span>
+                <span class="font-weight-bold buk18_2" style="font-size: 34px">Р</span>
+                <span class="font-weight-bold buk19_2" style="font-size: 34px">С</span>
+                <span class="font-weight-bold buk20_2" style="font-size: 34px">Т</span>
+                <span class="font-weight-bold buk21_2" style="font-size: 34px">У</span>
+                <span class="font-weight-bold buk22_2" style="font-size: 34px">Ф</span>
+                <span class="font-weight-bold buk23_2" style="font-size: 34px">Х</span>
+                <span class="font-weight-bold buk24_2" style="font-size: 34px">Ц</span>
+                <span class="font-weight-bold buk25_2" style="font-size: 34px">Ч</span>
+                <span class="font-weight-bold buk26_2" style="font-size: 34px">Ш</span>
+                <span class="font-weight-bold buk27_2" style="font-size: 34px">Щ</span>
+                <span class="font-weight-bold buk28_2" style="font-size: 34px">Ъ</span>
+                <span class="font-weight-bold buk29_2" style="font-size: 34px">Ы</span>
+                <span class="font-weight-bold buk30_2" style="font-size: 34px">Ь</span>
+                <span class="font-weight-bold buk31_2" style="font-size: 34px">Э</span>
+                <span class="font-weight-bold buk32_2" style="font-size: 34px">Ю</span>
+                <span class="font-weight-bold buk33_2" style="font-size: 34px">Я</span>
+      </div>
+
+      <div class="yakStart mt-5">
+          <img src="start.png" style="position: absolute; left: 10px; width: 300px;">
+          <q class="border p-2" style="left: 10px; position: absolute; bottom: 100px;">В эфире капитал шоу поле чудес! Вам нужно угадать слово</q>
+      </div>
+</div>
+
+    <div class="yak_2 col-2" style="display: none">
+        <h1 style="margin-left: 650px; position: absolute; top: -200px; z-index: 1;" class="text-danger">Красава!</h1>
+        <img src="yakubovich.png" class="w-100" style="position: absolute; top: -300px; margin-left: 600px;">
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        let score = 0;
+        
+        document.querySelector(".buk2").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr1").innerHTML = "Б";
+            document.querySelector(".pr1").style.background = "white";
+            document.querySelector(".yak").style.display = "block";
+
+            setTimeout(noYak, 1000);
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk21").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr2").innerHTML = "У";
+            document.querySelector(".pr2").style.background = "white";
+            document.querySelector(".yak").style.display = "block";
+            setTimeout(noYak, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk14").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr3").innerHTML = "М";
+            document.querySelector(".pr3").style.background = "white";
+            document.querySelector(".yak").style.display = "block";
+            setTimeout(noYak, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk1").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr4").innerHTML = "А";
+            document.querySelector(".pr4").style.background = "white";
+
+            document.querySelector(".pr6").innerHTML = "А";
+            document.querySelector(".pr6").style.backgroundColor = "white";
+            document.querySelector(".yak").style.display = "block";
+            setTimeout(noYak, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+
+        document.querySelector(".buk4").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr5").innerHTML = "Г";
+            document.querySelector(".pr5").style.background = "white";
+            document.querySelector(".yak").style.display = "block";
+            setTimeout(noYak, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        function noYak() {
+            document.querySelector(".yak").style.display = "none";
+        }
+
+        setTimeout(function() {
+            document.querySelector(".pole").style.display = "none";
+            document.querySelector(".container").style.display = "block";
+            document.querySelector(".score_").style.display = "block";
+        }, 1000);
+
+
+
+
+        document.querySelector(".buk3").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk5").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk6").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+        document.querySelector(".buk7").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk8").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+        document.querySelector(".buk3").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk9").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+        document.querySelector(".buk10").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+        document.querySelector(".buk11").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+        document.querySelector(".buk12").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+        document.querySelector(".buk13").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk15").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk16").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk17").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk18").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk19").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk20").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk22").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk23").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk24").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk25").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk26").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk27").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk28").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk29").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk30").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk31").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk32").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk33").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".btn1").onclick = function() {
+            document.querySelector(".container").style.display = "none";
+            document.querySelector(".container_2").style.display = "block";
+        }
+
+        function noYak() {
+            document.querySelector(".yak").style.display = "none";
+        }
+
+
+
+
+
+        // 2 вопрос
+
+
+        document.querySelector(".buk17_2").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr1_2").innerHTML = "П";
+            document.querySelector(".pr1_2").style.background = "white";
+            document.querySelector(".yak_2").style.display = "block";
+            setTimeout(noYak2, 1000);
+
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk18_2").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr2_2").innerHTML = "Р";
+            document.querySelector(".pr2_2").style.background = "white";
+            document.querySelector(".yak_2").style.display = "block";
+            setTimeout(noYak2, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk33_2").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr3_2").innerHTML = "Я";
+            document.querySelector(".pr3_2").style.background = "white";
+            document.querySelector(".yak_2").style.display = "block";
+            setTimeout(noYak2, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk14_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk15_2").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr4_2").innerHTML = "Н";
+            document.querySelector(".pr4_2").style.background = "white";
+            document.querySelector(".yak_2").style.display = "block";
+            setTimeout(noYak2, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+
+        document.querySelector(".buk10_2").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr5_2").innerHTML = "И";
+            document.querySelector(".pr5_2").style.background = "white";
+            document.querySelector(".yak_2").style.display = "block";
+            setTimeout(noYak2, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk12_2").onclick = function() {
+            alert("Правильно!");
+            document.querySelector(".pr6_2").innerHTML = "К";
+            document.querySelector(".pr6_2").style.background = "white";
+            document.querySelector(".yak_2").style.display = "block";
+            setTimeout(noYak2, 1000);
+
+            score = score + 100;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+
+
+
+        document.querySelector(".buk1_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk2_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk3_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+
+        document.querySelector(".buk4_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk5_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk6_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+        document.querySelector(".buk7_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk8_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk9_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk11_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk13_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+
+        document.querySelector(".buk16_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk19_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk20_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk21_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk22_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk23_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk24_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk25_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+
+        document.querySelector(".buk26_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk27_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk28_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk29_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk30_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk31_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".buk32_2").onclick = function() {
+            alert("НЕПРАВИЛЬНО!!!!!!!!!!!!!!!!!!");
+
+            score = score - 10;
+            document.querySelector(".score").innerHTML = score;
+        }
+
+        document.querySelector(".btn1").onclick = function() {
+            document.querySelector(".container").style.display = "none";
+            document.querySelector(".container_2").style.display = "block";
+        }
+
+        function noYak2() {
+            document.querySelector(".yak_2").style.display = "none";
+        }
+
+        
+    </script>
+
+  </body>
+</html>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
